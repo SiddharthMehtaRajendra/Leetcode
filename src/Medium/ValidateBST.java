@@ -1,3 +1,6 @@
+// Recursive: https://www.youtube.com/watch?v=Z_-h_mpDmeg
+// Iterative: https://www.youtube.com/watch?v=gGsEVFP0aQo
+
 package Medium;
 
 public class ValidateBST {
@@ -23,7 +26,7 @@ public class ValidateBST {
 
 	class Solution {
 		public boolean isValidBST(TreeNode root) {
-			return validateBST(root, null, null);
+			return this.validateBST(root, null, null);
 		}
 
 		private boolean validateBST(TreeNode root, Integer min, Integer max) {

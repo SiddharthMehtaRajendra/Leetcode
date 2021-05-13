@@ -36,7 +36,9 @@ public class TicTacToe {
 			if (row == (cols.length - 1 - col))
 				antiDiagonal += value;
 
-			if (Math.abs(rows[row]) == size || Math.abs(cols[col]) == size || Math.abs(diagonal) == size
+			if (Math.abs(rows[row]) == size 
+					|| Math.abs(cols[col]) == size 
+					|| Math.abs(diagonal) == size
 					|| Math.abs(antiDiagonal) == size) {
 				return player;
 			}

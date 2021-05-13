@@ -8,7 +8,7 @@ public class IntersectionOfTwoArraysII {
 			int i = 0, j = 0, k = 0;
 			Arrays.sort(nums1);
 			Arrays.sort(nums2);
-			int maxLength = Math.max(nums1.length, nums2.length);
+			int maxLength = Math.min(nums1.length, nums2.length);
 			int[] answer = new int[maxLength];
 
 			while (i < nums1.length && j < nums2.length) {

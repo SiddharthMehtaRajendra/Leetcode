@@ -23,7 +23,6 @@ public class StringToIntegerAtoI {
 
 			long result = 0;
 			while (ptr < n && Character.isDigit(s.charAt(ptr))) {
-				// Horner's rule
 				result = result * 10 + (s.charAt(ptr) - '0');
 				if (result * sign > Integer.MAX_VALUE || result * sign < Integer.MIN_VALUE) {
 					return sign == 1 ? Integer.MAX_VALUE : Integer.MIN_VALUE;

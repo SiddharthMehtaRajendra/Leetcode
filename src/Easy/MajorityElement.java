@@ -1,4 +1,5 @@
 // https://www.youtube.com/watch?v=M1IL4hz0QrE
+
 package Easy;
 
 public class MajorityElement {

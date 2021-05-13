@@ -45,6 +45,9 @@ public class HouseRobber {
 		}
 	}
 
+	
+	// https://www.youtube.com/watch?v=xlvhyfcoQa4
+	
 	class DPOptimalSolution {
 		public int rob(int[] nums) {
 			if (nums == null || nums.length == 0)

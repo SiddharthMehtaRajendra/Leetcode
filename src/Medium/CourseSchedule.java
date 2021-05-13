@@ -1,3 +1,6 @@
+// DFS Solution - https://www.youtube.com/watch?v=EgI5nU9etnU
+// Topological Sort - https://www.youtube.com/watch?v=rG2-_lgcZzo
+
 package Medium;
 
 import java.util.HashMap;

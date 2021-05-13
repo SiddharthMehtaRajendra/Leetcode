@@ -1,3 +1,5 @@
+// https://www.youtube.com/watch?v=2EErQ25kKE8 (Similar)
+
 package Medium;
 
 import java.util.Stack;
@@ -7,44 +9,43 @@ public class BasicCalculatorII {
 		public int calculate(String s) {
 			if (s == null || s.length() == 0)
 				return 0;
-			return calculator(s.trim());
+			return this.calculator(s.trim());
 		}
 
 		private int calculator(String s) {
-			String curr = "";
+			Integer curr = 0;
 			char operator = '+';
-			Stack<String> st = new Stack<>();
+			Stack<Integer> st = new Stack<>();
 			for (char c : s.toCharArray()) {
 				if (Character.isDigit(c)) {
-					curr += c;
+					curr = (curr * 10) + (c - '0');
 				} else {
 					if (c == ' ')
 						continue;
-					process(operator, curr, st);
+					this.process(operator, curr, st);
 					operator = c;
-					curr = "";
+					curr = 0;
 				}
 			}
-			if (curr.length() != 0) {
-				process(operator, curr, st);
+			if (curr != 0) {
+				this.process(operator, curr, st);
 			}
 			int result = 0;
 			while (!st.isEmpty()) {
-				result += Integer.parseInt(st.pop());
+				result += st.pop();
 			}
 			return result;
 		}
 
-		private void process(char operator, String curr, Stack<String> st) {
+		private void process(char operator, Integer curr, Stack<Integer> st) {
 			if (operator == '*') {
-				int value = Integer.parseInt(st.pop()) * Integer.parseInt(curr);
-				st.push(String.valueOf(value));
+				int value = st.pop() * curr;
+				st.push(value);
 			} else if (operator == '/') {
-				int value = Integer.parseInt(st.pop()) / Integer.parseInt(curr);
-				st.push(String.valueOf(value));
+				int value = st.pop() / curr;
+				st.push(value);
 			} else if (operator == '-') {
-				curr = operator + curr;
-				st.push(curr);
+				st.push(-curr);
 			} else {
 				st.push(curr);
 			}

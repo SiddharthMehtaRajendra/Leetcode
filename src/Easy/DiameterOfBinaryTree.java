@@ -1,3 +1,5 @@
+// Leetcode Solutions
+
 package Easy;
 
 public class DiameterOfBinaryTree {
@@ -24,7 +26,7 @@ public class DiameterOfBinaryTree {
 		private int diameter;
 
 		public int diameterOfBinaryTree(TreeNode root) {
-			helper(root);
+			this.helper(root);
 			return diameter;
 		}
 
@@ -32,8 +34,8 @@ public class DiameterOfBinaryTree {
 			if (root == null)
 				return 0;
 
-			int leftPath = helper(root.left);
-			int rightPath = helper(root.right);
+			int leftPath = this.helper(root.left);
+			int rightPath = this.helper(root.right);
 
 			diameter = Math.max(diameter, leftPath + rightPath);
 			return 1 + Math.max(leftPath, rightPath);

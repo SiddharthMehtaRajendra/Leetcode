@@ -1,6 +1,10 @@
+// https://www.youtube.com/watch?v=DfljaUwZsOk
+
 package Hard;
 
 import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SlidingWindowMaximum {
 
@@ -64,5 +68,43 @@ public class SlidingWindowMaximum {
 			}
 		}
 
+	}
+
+	// https://www.youtube.com/watch?v=DfljaUwZsOk
+	class DequeSolutionII {
+		List<Integer> result = new ArrayList<>();
+
+		public int[] maxSlidingWindow(int[] nums, int k) {
+			if (nums == null || nums.length == 0 || k == 0)
+				return new int[0];
+			if (k == 1)
+				return nums;
+
+			ArrayDeque<Integer> deque = new ArrayDeque<Integer>();
+			int l = 0, r = 0;
+
+			while (r < nums.length) {
+				while (!deque.isEmpty() && nums[deque.getLast()] < nums[r]) {
+					deque.removeLast();
+				}
+				deque.addLast(r);
+
+				if (l > deque.getFirst()) {
+					deque.removeFirst();
+				}
+
+				if (r + 1 >= k) {
+					result.add(nums[deque.getFirst()]);
+					l++;
+				}
+				r++;
+			}
+
+			int[] res = new int[result.size()];
+			for (int i = 0; i < res.length; i++) {
+				res[i] = result.get(i).intValue();
+			}
+			return res;
+		}
 	}
 }

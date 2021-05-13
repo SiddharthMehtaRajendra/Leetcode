@@ -1,3 +1,5 @@
+// Leetcode Solution
+
 package Medium;
 
 public class FastPower {

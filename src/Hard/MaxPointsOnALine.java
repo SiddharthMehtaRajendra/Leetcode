@@ -1,3 +1,5 @@
+// https://www.youtube.com/watch?v=KqZV0XfKQks
+
 package Hard;
 
 import java.util.HashMap;
@@ -40,7 +42,7 @@ public class MaxPointsOnALine {
 	        return a[0] == b[0] && a[1] == b[1];
 	    }
 	    
-	    private double getSlope(int[] a, int[] b){
+	    private double getSlope(int[] a, int[] b){ 
 	        if(a[0] == b[0]) return Double.MAX_VALUE;
 	        if(a[1] == b[1]) return 0;
 	        return ((double) a[0] - b[0]) / ((double) a[1] - b[1]);
