@@ -1,4 +1,4 @@
-package Easy;
+	package Easy;
 
 public class LongestCommonPrefix {
 	class NaiveSolution { // Accepted in LeetCode

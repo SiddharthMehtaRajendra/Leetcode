@@ -33,7 +33,7 @@ public class FindPeakElement {
 	            } else {
 	                left = mid + 1;
 	            }
-	        }
+	        	}
 	        return left;
 	    }
 	}
