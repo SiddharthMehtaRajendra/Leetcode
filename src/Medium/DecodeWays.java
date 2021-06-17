@@ -21,6 +21,27 @@ public class DecodeWays {
 		}
 	}
 	
+	class MemoizedSolution {
+	    int[] dp;
+	    public int numDecodings(String s) {
+	        if(s == null) return 0;
+	        dp = new int[s.length() + 1];
+	        return helper(s, 0);
+	    }
+	    
+	    private int helper(String s, int index){
+	        if(s.length() == index) return 1;
+	        if(s.charAt(index) == '0') return 0;
+	        if(dp[index] > 0) return dp[index];
+	        int ways = this.helper(s, index + 1);
+	        if((index < s.length() - 1) && Integer.parseInt(s.substring(index, index + 2)) <= 26){
+	            ways += this.helper(s, index + 2);
+	        }
+	        dp[index] = ways;
+	        return ways;
+	    }
+	}
+	
 	class DPSolution {
 	    public int numDecodings(String s) {
 	        if(s == null) return 0;
