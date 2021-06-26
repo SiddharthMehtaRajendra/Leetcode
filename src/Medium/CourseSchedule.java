@@ -43,7 +43,7 @@ public class CourseSchedule {
 	        
 	        this.visited.add(course);
 	        for(int neighbour: this.adjList.get(course)){    
-	            if(!dfs(neighbour)) return false;
+	            if(!this.dfs(neighbour)) return false;
 	        }
 	        this.visited.remove(course);
 	        this.adjList.get(course).clear();

@@ -3,6 +3,7 @@ package Medium;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Set;
@@ -63,7 +64,7 @@ public class DesignTwitter {
 					}
 				}
 			}
-			List<Integer> result = new ArrayList<>();
+			List<Integer> result = new LinkedList<>();
 			while (!pq.isEmpty()) {
 				result.add(0, pq.poll().id);
 			}

@@ -30,7 +30,6 @@ public class CustomSortString {
 					charMap[i]--;
 				}
 			}
-
 			return sb.toString();
 		}
 	}

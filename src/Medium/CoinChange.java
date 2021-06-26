@@ -6,8 +6,6 @@ import java.util.Map;
 
 public class CoinChange {
 	class NaiveSolution {
-		Map<String, Integer> cache = new HashMap<>();
-
 		public int coinChange(int[] coins, int amount) {
 			int minCoins = helper(coins, amount, 0, 0);
 			return minCoins == Integer.MAX_VALUE ? -1 : minCoins;

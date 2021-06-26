@@ -50,7 +50,7 @@ public class CourseScheduleII {
 			while (!st.isEmpty()) {
 				result[i++] = st.pop();
 			}
-			return result;
+			return result; 
 		}
 
 		private void buildAdjacencyListAndIndegreesArray(int[][] prerequisites) {
